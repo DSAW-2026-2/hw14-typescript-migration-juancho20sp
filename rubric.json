@@ -1,0 +1,32 @@
+{
+  "name": "HW14 — TypeScript Migration",
+  "homeworkNumber": 14,
+  "structure": {
+    "maxPoints": 20,
+    "requiredFiles": [
+      { "path": "tsconfig.json", "description": "TypeScript configuration", "points": 8 },
+      { "path": "deployment.txt", "description": "Vercel deployment URL", "points": 6 },
+      { "path": "src/types.ts", "description": "Shared types file used by both frontend and backend", "points": 6 }
+    ],
+    "requiredFolders": []
+  },
+  "quality": {
+    "maxPoints": 20,
+    "checks": ["typescript"]
+  },
+  "deployment": {
+    "maxPoints": 20,
+    "type": "vercel"
+  },
+  "acceptance": {
+    "maxPoints": 40,
+    "sourcePaths": ["src/types.ts", "tsconfig.json"],
+    "criteria": [
+      "At least 3 React components are migrated to TypeScript (.tsx) with typed props — no component accepts untyped props",
+      "At least 2 Express route files are migrated to TypeScript (.ts) with typed Request and Response objects",
+      "The 'any' type is not used anywhere in the codebase — tsc --noEmit passes without errors",
+      "A shared src/types.ts file defines at least 2 interfaces or types that are imported and used by both the frontend and backend",
+      "The TypeScript compiler is configured with strict: true or at least noImplicitAny: true in tsconfig.json"
+    ]
+  }
+}
